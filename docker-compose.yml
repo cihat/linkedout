@@ -35,7 +35,7 @@ services:
   mongo:
     image: mongo
     ports:
-      - 27017:27017
+      - 37017:27017
   load-balancer:
     image: traefik:v2.2
     command:
