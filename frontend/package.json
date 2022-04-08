@@ -11,7 +11,7 @@
     "lint-staged": "lint-staged"
   },
   "dependencies": {
-    "axios": "^0.20.0",
+    "axios": "^0.21.2",
     "core-js": "^3.6.5",
     "normalize.css": "^8.0.1",
     "register-service-worker": "^1.7.1",
