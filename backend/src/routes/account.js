@@ -69,6 +69,7 @@ router.post(
     failWithError: true,
   }),
   async (req, res) => {
+    // req.isAuthenticated()
     res.send(req.user)
   },
   (err, req, res, next) => {
