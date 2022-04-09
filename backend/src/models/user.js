@@ -13,12 +13,32 @@ const userSchema = new Schema(
     },
     username: { type: String, unique: true, required: true },
     email: { type: String, required: true, unique: true },
+    previousCompany: {
+      type: 'ObjectId',
+      ref: 'Company',
+      autopopulate: true,
+    },
+    isJob: {
+      type: Boolean,
+      required: true,
+    },
+    currentCompany: {
+      type: 'ObjectId',
+      ref: 'Company',
+      autopopulate: true,
+    },
+    comments: {
+      type: 'ObjectId',
+      ref: 'Comment',
+      autopopulate: true,
+    },
   },
   { timestamps: true }
 )
 
 userSchema.plugin(passportLocalMongoose, {
   usernameField: 'email',
+  passwordField: 'password',
   populateFields: ['name, sessionId'],
 })
 
