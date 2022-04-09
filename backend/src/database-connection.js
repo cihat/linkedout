@@ -13,4 +13,4 @@ mongoose
   .then(() => console.log('Database connection established.'))
   .catch(console.log)
 
-module.exports = mongoose.connection
+module.exports = { mongoose }
