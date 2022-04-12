@@ -1,6 +1,10 @@
 <script>
+import Icon from '../Icon/index.vue'
 export default {
   name: 'Header',
+  components: {
+    Icon,
+  },
 }
 </script>
 
@@ -14,33 +18,33 @@ header.header
     a.logo(href='#')
       img(src='../../assets/image/logo.svg' alt='')
     .search
-      i.icon-search
+      icon( icon='camera' :size="20" color="#5096ec")
       input(type='text' placeholder='Search...')
     nav.menu
       ul
         li.active
           a(href='#')
-            i.icon-home
+            icon( icon='home' :size="20" color="#5096ec")
             span Home
         li
           a(href='#')
-            i.icon-users
+            icon( icon='user' :size="20" color="#5096ec")
             span Users
         li
           a(href='#')
-            i.icon-briefcase
+            icon( icon='briefcase' :size="20" color="#5096ec")
             span Jobs
         li
           a(href='#')
-            i.icon-message
+            icon( icon='home' :size="20" color="#5096ec")
             span Messages
         li
           a(href='#')
-            i.icon-notification
+            icon( icon='notification' :size="20" color="#5096ec")
             span Notifications
         li
           a(href='#')
-            i.icon-grid
+            icon( icon='play' :size="20" color="#5096ec")
             span Applications
     .user-menu
       a(href='#')
@@ -71,10 +75,10 @@ header.header
       margin-left: 18px;
       position: relative;
 
-      i {
+      svg {
         position: absolute;
-        top: 0;
-        left: 0;
+        top: 4px;
+        left: 8px;
         height: 32px;
         width: 44px;
         display: flex;
@@ -111,7 +115,7 @@ header.header
             margin: 0 13px;
             color: #aaa;
 
-            i {
+            svg {
               font-size: 20px;
             }
 
@@ -128,7 +132,7 @@ header.header
             a {
               color: var(--color);
 
-              i {
+              svg {
                 margin-right: 5px;
               }
 
@@ -178,7 +182,7 @@ header.header
           object-fit: cover;
         }
 
-        i {
+        svg {
           color: #a7b4cc;
           font-size: 12px;
           margin-left: 5px;
