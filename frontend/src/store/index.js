@@ -6,7 +6,7 @@ export default createStore({
   mutations: {},
   actions: {
     async fetchUsers() {
-      return (await axios.get('/api/users')).data
+      return (await axios.get('/api/account')).data
     },
   },
   modules: {},
