@@ -16,7 +16,7 @@ export default {
 header.header
   .container
     a.logo(href='#')
-      img(src='../../assets/image/logo.svg' alt='')
+      img(src='../../assets/image/new-linkedout-logo.svg' alt='LinkedOut Logo')
     .search
       icon( icon='camera' :size="20" color="#5096ec")
       input(type='text' placeholder='Search...')
@@ -67,9 +67,16 @@ header.header
   .container {
     height: 56px;
     display: flex;
+    justify-content: center;
     align-items: center;
     max-width: 1140px;
     margin: auto;
+
+    .logo {
+      img {
+        width: 130px;
+      }
+    }
 
     .search {
       margin-left: 18px;
