@@ -1,6 +1,10 @@
 <script>
+import Icon from '../Icon'
 export default {
   name: 'message',
+  components: {
+    Icon,
+  },
 }
 </script>
 
@@ -12,11 +16,11 @@ export default {
     | &#x9;&#x9;Messaging
     .actions
       a(href='#')
-        i.icon-edit
+        icon(icon='write' :size="14" color="#fff")
       a(href='#')
-        i.icon-dot-3
+        icon(icon='equalizer2' :size="14" color="#fff")
       a(href='#')
-        i.icon-up-open
+        icon(icon='arrow-up' :size="14" color="#fff")
 
 </template>
 

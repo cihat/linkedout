@@ -1,5 +1,11 @@
 <script>
-export default {}
+import Icon from '../Icon/index.vue'
+export default {
+  name: 'LeftSidebar',
+  components: {
+    Icon,
+  },
+}
 </script>
 
 <template lang="pug">
@@ -23,20 +29,20 @@ export default {}
     ul
       li
         a(href='#')
-          i.icon-hash
-          | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;money
+          icon( icon='point-right' :size="20" color="#5096ec")
+          | money
       li
         a(href='#')
-          i.icon-hash
-          | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;economy
+          icon( icon='point-right' :size="20" color="#5096ec")
+          | economy
       li
         a(href='#')
-          i.icon-hash
-          | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;markets
+          icon( icon='point-right' :size="20" color="#5096ec")
+          | markets
       li
         a(href='#')
-          i.icon-hash
-          | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;futurism
+          icon( icon='point-right' :size="20" color="#5096ec")
+          | futurism
     h6
       | GROUP
       .dropdown
@@ -46,23 +52,23 @@ export default {}
     ul
       li
         a(href='#')
-          i.icon-users
-          | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Android Developers Group
+          icon( icon='point-right' :size="20" color="#5096ec")
+          | Android Developers Group
       li
         a(href='#')
-          i.icon-users
-          | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;User Interface
+          icon( icon='point-right' :size="20" color="#5096ec")
+          | User Interface
       li
         a(href='#')
-          i.icon-users
-          | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Prototurk Group
+          icon( icon='point-right' :size="20" color="#5096ec")
+          | Prototurk Group
       li
         a(href='#')
-          i.icon-users
+          icon( icon='point-right' :size="20" color="#5096ec")
           | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Design Thinking
   a.widget.widget-btn(href='#')
     | Add Event
-    i.icon-plus
+    icon( icon='plus' :size="14" color="#5096ec")
   a.widget.widget-btn.more(href='#')
     | Find More
 </template>
@@ -224,6 +230,10 @@ export default {}
           font-size: 12px;
           color: var(--color);
           padding: 4px 0;
+
+          svg {
+            margin-right: 6px;
+          }
 
           &:hover {
             color: #222;

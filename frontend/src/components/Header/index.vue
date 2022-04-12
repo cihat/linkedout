@@ -22,37 +22,37 @@ header.header
       input(type='text' placeholder='Search...')
     nav.menu
       ul
-        li.active
+        li
           a(href='#')
-            icon( icon='home' :size="20" color="#5096ec")
+            icon( icon='home' :size="19" color="#5096ec")
             span Home
         li
           a(href='#')
-            icon( icon='user' :size="20" color="#5096ec")
+            icon( icon='user' :size="19" color="#5096ec")
             span Users
         li
           a(href='#')
-            icon( icon='briefcase' :size="20" color="#5096ec")
+            icon( icon='briefcase' :size="19" color="#5096ec")
             span Jobs
         li
           a(href='#')
-            icon( icon='home' :size="20" color="#5096ec")
-            span Messages
+            icon( icon='pencil' :size="19" color="#5096ec")
+            span Messaging
         li
           a(href='#')
-            icon( icon='notification' :size="20" color="#5096ec")
+            icon( icon='box' :size="19" color="#5096ec")
             span Notifications
-        li
-          a(href='#')
-            icon( icon='play' :size="20" color="#5096ec")
-            span Applications
+        //- li
+        //-   a(href='#')
+        //-     icon( icon='play' :size="20" color="#5096ec")
+        //-     span Applications
     .user-menu
       a(href='#')
         span.detail
           span.name Cameron Williamson
           span.status.online Online
         img(src='../../assets/image/avatar.png' alt='')
-        i.icon-down-open
+        icon(icon="arrow-down" :size='14' color="#5096ec")
   
 </template>
 
@@ -117,35 +117,23 @@ header.header
         li {
           a {
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
             margin: 0 13px;
-            color: #aaa;
+            color: #aaaaaa;
+
+            span {
+              font-size: 14px;
+            }
 
             svg {
               font-size: 20px;
-            }
-
-            span {
-              display: none;
+              margin-bottom: 4px;
             }
 
             &:hover {
               color: var(--color);
-            }
-          }
-
-          &.active {
-            a {
-              color: var(--color);
-
-              svg {
-                margin-right: 5px;
-              }
-
-              span {
-                display: block;
-              }
             }
           }
         }

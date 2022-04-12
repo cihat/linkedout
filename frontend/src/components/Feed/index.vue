@@ -1,6 +1,10 @@
 <script>
+import Icon from '../Icon'
 export default {
   name: 'feed',
+  components: {
+    Icon,
+  },
 }
 </script>
 
@@ -12,21 +16,21 @@ export default {
       li
         label
           input(type='file' accept='image/*')
-          i.icon-camera
-          | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Photo
+          icon(icon='image1' :size="20" color="#5096ec")
+          | Photo
       li
         label
           input(type='file')
-          i.icon-video
-          | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Video
+          icon(icon='file-video' :size="20" color="#5096ec")-video
+          | Video
       li
         a(href='#')
-          i.icon-calendar
-          | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Event
+          icon(icon='browser' :size="20" color="#5096ec")-calendar
+          | Event
       li
         a(href='#')
-          i.icon-edit
-          | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Write Articles
+          icon(icon='pen' :size="20" color="#5096ec")-edit
+          | Write Articles
   .filter-box
     h6 Filter post by :
     label.selectbox
@@ -34,7 +38,7 @@ export default {
         option(value='') Popular
         option(value='') Popular
         option(value='') Popular
-      i.icon-down-open
+      icon(icon='arrow-down' :size="16" color="#5096ec")-down-open
   .post
     .post-header
       a.post-author(href='#')
@@ -44,7 +48,7 @@ export default {
           .job-title UI/UX Designer at Freelance
           .date 7 hour ago
       a.more(href='#')
-        i.icon-dot-3
+        icon(icon='equalizer2' :size="20" color="#5096ec")-dot-3
     .post-content
       p
         | He said, Design is not just what it looks and feels like. Design is how it work
@@ -56,23 +60,23 @@ export default {
         img(src='../../assets/image/stevejobs.png' alt='')
     .post-alt-detail
       .likes
-        i.icon-heart
-        i.icon-thumbs-up
-        | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;172
+        icon(icon='heart' :size="20" color="#5096ec")-heart
+        icon(icon='point-right' :size="20" color="#5096ec")-thumbs-up
+        | 172
       .comments
         | 10 Comment
     .post-actions
       a(href='#')
-        i.icon-thumbs-up
+        icon(icon='heart' :size="20" color="#5096ec")-thumbs-up
         |  Like
       a(href='#')
-        i.icon-message
+        icon(icon='quotes-left' :size="20" color="#5096ec")-message
         |  Comment
       a(href='#')
-        i.icon-share
+        icon(icon='share' :size="20" color="#5096ec")-share
         |  Share
       a(href='#')
-        i.icon-send
+        icon(icon='forward' :size="20" color="#5096ec")-send
         |  Send
     .post-comment-form
       img(src='../../assets/image/avatar.png' alt='')
@@ -80,7 +84,7 @@ export default {
         textarea(name='' placeholder='Write comment' id='' cols='30' rows='10')
         label
           input(type='file' accept='image/*')
-          i.icon-camera
+          icon(icon='camera' :size="20" color="#5096ec")-camera
   .post
     .post-header
       a.post-author(href='#')
@@ -90,7 +94,7 @@ export default {
           .job-title UI/UX Designer at Freelance
           .date 7 hour ago
       a.more(href='#')
-        i.icon-dot-3
+        icon(icon='equalizer2' :size="20" color="#5096ec")-dot-3
     .post-content
       p
         | He said, Design is not just what it looks and feels like. Design is how it work
@@ -102,23 +106,23 @@ export default {
         img(src='../../assets/image/stevejobs.png' alt='')
     .post-alt-detail
       .likes
-        i.icon-heart
-        i.icon-thumbs-up
-        | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;172
+        icon(icon='heart' :size="20" color="#5096ec")-heart
+        icon(icon='point-right' :size="20" color="#5096ec")-thumbs-up
+        | 172
       .comments
         | 10 Comment
     .post-actions
       a(href='#')
-        i.icon-thumbs-up
+        icon(icon='heart' :size="20" color="#5096ec")-thumbs-up
         |  Like
       a(href='#')
-        i.icon-message
+        icon(icon='quotes-left' :size="20" color="#5096ec")-message
         |  Comment
       a(href='#')
-        i.icon-share
+        icon(icon='share' :size="20" color="#5096ec")-share
         |  Share
       a(href='#')
-        i.icon-send
+        icon(icon='forward' :size="20" color="#5096ec")-send
         |  Send
     .post-comment-form
       img(src='../../assets/image/avatar.png' alt='')
@@ -126,7 +130,7 @@ export default {
         textarea(name='' placeholder='Write comment' id='' cols='30' rows='10')
         label
           input(type='file' accept='image/*')
-          i.icon-camera
+          icon(icon='camera' :size="20" color="#5096ec")-camera
   .post
     .post-header
       a.post-author(href='#')
@@ -136,7 +140,7 @@ export default {
           .job-title UI/UX Designer at Freelance
           .date 7 hour ago
       a.more(href='#')
-        i.icon-dot-3
+        icon(icon='equalizer2' :size="20" color="#5096ec")-dot-3
     .post-content
       p
         | He said, Design is not just what it looks and feels like. Design is how it work
@@ -148,23 +152,23 @@ export default {
         img(src='../../assets/image/stevejobs.png' alt='')
     .post-alt-detail
       .likes
-        i.icon-heart
-        i.icon-thumbs-up
-        | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;172
+        icon(icon='heart' :size="20" color="#5096ec")-heart
+        icon(icon='point-right' :size="20" color="#5096ec")-thumbs-up
+        | 172
       .comments
         | 10 Comment
     .post-actions
       a(href='#')
-        i.icon-thumbs-up
+        icon(icon='heart' :size="20" color="#5096ec")-thumbs-up
         |  Like
       a(href='#')
-        i.icon-message
+        icon(icon='quotes-left' :size="20" color="#5096ec")-message
         |  Comment
       a(href='#')
-        i.icon-share
+        icon(icon='share' :size="20" color="#5096ec")-share
         |  Share
       a(href='#')
-        i.icon-send
+        icon(icon='forward' :size="20" color="#5096ec")-send
         |  Send
     .post-comment-form
       img(src='../../assets/image/avatar.png' alt='')
@@ -172,8 +176,8 @@ export default {
         textarea(name='' placeholder='Write comment' id='' cols='30' rows='10')
         label
           input(type='file' accept='image/*')
-          i.icon-camera
-  .post
+          icon(icon='camera' :size="20" color="#5096ec")-camera
+    .post
     .post-header
       a.post-author(href='#')
         img(src='../../assets/image/avatar.png' alt='')
@@ -182,7 +186,7 @@ export default {
           .job-title UI/UX Designer at Freelance
           .date 7 hour ago
       a.more(href='#')
-        i.icon-dot-3
+        icon(icon='equalizer2' :size="20" color="#5096ec")-dot-3
     .post-content
       p
         | He said, Design is not just what it looks and feels like. Design is how it work
@@ -194,23 +198,23 @@ export default {
         img(src='../../assets/image/stevejobs.png' alt='')
     .post-alt-detail
       .likes
-        i.icon-heart
-        i.icon-thumbs-up
-        | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;172
+        icon(icon='heart' :size="20" color="#5096ec")-heart
+        icon(icon='point-right' :size="20" color="#5096ec")-thumbs-up
+        | 172
       .comments
         | 10 Comment
     .post-actions
       a(href='#')
-        i.icon-thumbs-up
+        icon(icon='heart' :size="20" color="#5096ec")-thumbs-up
         |  Like
       a(href='#')
-        i.icon-message
+        icon(icon='quotes-left' :size="20" color="#5096ec")-message
         |  Comment
       a(href='#')
-        i.icon-share
+        icon(icon='share' :size="20" color="#5096ec")-share
         |  Share
       a(href='#')
-        i.icon-send
+        icon(icon='forward' :size="20" color="#5096ec")-send
         |  Send
     .post-comment-form
       img(src='../../assets/image/avatar.png' alt='')
@@ -218,7 +222,375 @@ export default {
         textarea(name='' placeholder='Write comment' id='' cols='30' rows='10')
         label
           input(type='file' accept='image/*')
-          i.icon-camera
+          icon(icon='camera' :size="20" color="#5096ec")-camera
+    .post
+    .post-header
+      a.post-author(href='#')
+        img(src='../../assets/image/avatar.png' alt='')
+        .detail
+          .name Brooklyn Simmons
+          .job-title UI/UX Designer at Freelance
+          .date 7 hour ago
+      a.more(href='#')
+        icon(icon='equalizer2' :size="20" color="#5096ec")-dot-3
+    .post-content
+      p
+        | He said, Design is not just what it looks and feels like. Design is how it work
+      p
+        a(href='#') #stevejobs
+        a(href='#') #design
+        a(href='#') #apple
+      p
+        img(src='../../assets/image/stevejobs.png' alt='')
+    .post-alt-detail
+      .likes
+        icon(icon='heart' :size="20" color="#5096ec")-heart
+        icon(icon='point-right' :size="20" color="#5096ec")-thumbs-up
+        | 172
+      .comments
+        | 10 Comment
+    .post-actions
+      a(href='#')
+        icon(icon='heart' :size="20" color="#5096ec")-thumbs-up
+        |  Like
+      a(href='#')
+        icon(icon='quotes-left' :size="20" color="#5096ec")-message
+        |  Comment
+      a(href='#')
+        icon(icon='share' :size="20" color="#5096ec")-share
+        |  Share
+      a(href='#')
+        icon(icon='forward' :size="20" color="#5096ec")-send
+        |  Send
+    .post-comment-form
+      img(src='../../assets/image/avatar.png' alt='')
+      .textarea
+        textarea(name='' placeholder='Write comment' id='' cols='30' rows='10')
+        label
+          input(type='file' accept='image/*')
+          icon(icon='camera' :size="20" color="#5096ec")-camera
+    .post
+    .post-header
+      a.post-author(href='#')
+        img(src='../../assets/image/avatar.png' alt='')
+        .detail
+          .name Brooklyn Simmons
+          .job-title UI/UX Designer at Freelance
+          .date 7 hour ago
+      a.more(href='#')
+        icon(icon='equalizer2' :size="20" color="#5096ec")-dot-3
+    .post-content
+      p
+        | He said, Design is not just what it looks and feels like. Design is how it work
+      p
+        a(href='#') #stevejobs
+        a(href='#') #design
+        a(href='#') #apple
+      p
+        img(src='../../assets/image/stevejobs.png' alt='')
+    .post-alt-detail
+      .likes
+        icon(icon='heart' :size="20" color="#5096ec")-heart
+        icon(icon='point-right' :size="20" color="#5096ec")-thumbs-up
+        | 172
+      .comments
+        | 10 Comment
+    .post-actions
+      a(href='#')
+        icon(icon='heart' :size="20" color="#5096ec")-thumbs-up
+        |  Like
+      a(href='#')
+        icon(icon='quotes-left' :size="20" color="#5096ec")-message
+        |  Comment
+      a(href='#')
+        icon(icon='share' :size="20" color="#5096ec")-share
+        |  Share
+      a(href='#')
+        icon(icon='forward' :size="20" color="#5096ec")-send
+        |  Send
+    .post-comment-form
+      img(src='../../assets/image/avatar.png' alt='')
+      .textarea
+        textarea(name='' placeholder='Write comment' id='' cols='30' rows='10')
+        label
+          input(type='file' accept='image/*')
+          icon(icon='camera' :size="20" color="#5096ec")-camera
+    .post
+    .post-header
+      a.post-author(href='#')
+        img(src='../../assets/image/avatar.png' alt='')
+        .detail
+          .name Brooklyn Simmons
+          .job-title UI/UX Designer at Freelance
+          .date 7 hour ago
+      a.more(href='#')
+        icon(icon='equalizer2' :size="20" color="#5096ec")-dot-3
+    .post-content
+      p
+        | He said, Design is not just what it looks and feels like. Design is how it work
+      p
+        a(href='#') #stevejobs
+        a(href='#') #design
+        a(href='#') #apple
+      p
+        img(src='../../assets/image/stevejobs.png' alt='')
+    .post-alt-detail
+      .likes
+        icon(icon='heart' :size="20" color="#5096ec")-heart
+        icon(icon='point-right' :size="20" color="#5096ec")-thumbs-up
+        | 172
+      .comments
+        | 10 Comment
+    .post-actions
+      a(href='#')
+        icon(icon='heart' :size="20" color="#5096ec")-thumbs-up
+        |  Like
+      a(href='#')
+        icon(icon='quotes-left' :size="20" color="#5096ec")-message
+        |  Comment
+      a(href='#')
+        icon(icon='share' :size="20" color="#5096ec")-share
+        |  Share
+      a(href='#')
+        icon(icon='forward' :size="20" color="#5096ec")-send
+        |  Send
+    .post-comment-form
+      img(src='../../assets/image/avatar.png' alt='')
+      .textarea
+        textarea(name='' placeholder='Write comment' id='' cols='30' rows='10')
+        label
+          input(type='file' accept='image/*')
+          icon(icon='camera' :size="20" color="#5096ec")-camera
+    .post
+    .post-header
+      a.post-author(href='#')
+        img(src='../../assets/image/avatar.png' alt='')
+        .detail
+          .name Brooklyn Simmons
+          .job-title UI/UX Designer at Freelance
+          .date 7 hour ago
+      a.more(href='#')
+        icon(icon='equalizer2' :size="20" color="#5096ec")-dot-3
+    .post-content
+      p
+        | He said, Design is not just what it looks and feels like. Design is how it work
+      p
+        a(href='#') #stevejobs
+        a(href='#') #design
+        a(href='#') #apple
+      p
+        img(src='../../assets/image/stevejobs.png' alt='')
+    .post-alt-detail
+      .likes
+        icon(icon='heart' :size="20" color="#5096ec")-heart
+        icon(icon='point-right' :size="20" color="#5096ec")-thumbs-up
+        | 172
+      .comments
+        | 10 Comment
+    .post-actions
+      a(href='#')
+        icon(icon='heart' :size="20" color="#5096ec")-thumbs-up
+        |  Like
+      a(href='#')
+        icon(icon='quotes-left' :size="20" color="#5096ec")-message
+        |  Comment
+      a(href='#')
+        icon(icon='share' :size="20" color="#5096ec")-share
+        |  Share
+      a(href='#')
+        icon(icon='forward' :size="20" color="#5096ec")-send
+        |  Send
+    .post-comment-form
+      img(src='../../assets/image/avatar.png' alt='')
+      .textarea
+        textarea(name='' placeholder='Write comment' id='' cols='30' rows='10')
+        label
+          input(type='file' accept='image/*')
+          icon(icon='camera' :size="20" color="#5096ec")-camera
+    .post
+    .post-header
+      a.post-author(href='#')
+        img(src='../../assets/image/avatar.png' alt='')
+        .detail
+          .name Brooklyn Simmons
+          .job-title UI/UX Designer at Freelance
+          .date 7 hour ago
+      a.more(href='#')
+        icon(icon='equalizer2' :size="20" color="#5096ec")-dot-3
+    .post-content
+      p
+        | He said, Design is not just what it looks and feels like. Design is how it work
+      p
+        a(href='#') #stevejobs
+        a(href='#') #design
+        a(href='#') #apple
+      p
+        img(src='../../assets/image/stevejobs.png' alt='')
+    .post-alt-detail
+      .likes
+        icon(icon='heart' :size="20" color="#5096ec")-heart
+        icon(icon='point-right' :size="20" color="#5096ec")-thumbs-up
+        | 172
+      .comments
+        | 10 Comment
+    .post-actions
+      a(href='#')
+        icon(icon='heart' :size="20" color="#5096ec")-thumbs-up
+        |  Like
+      a(href='#')
+        icon(icon='quotes-left' :size="20" color="#5096ec")-message
+        |  Comment
+      a(href='#')
+        icon(icon='share' :size="20" color="#5096ec")-share
+        |  Share
+      a(href='#')
+        icon(icon='forward' :size="20" color="#5096ec")-send
+        |  Send
+    .post-comment-form
+      img(src='../../assets/image/avatar.png' alt='')
+      .textarea
+        textarea(name='' placeholder='Write comment' id='' cols='30' rows='10')
+        label
+          input(type='file' accept='image/*')
+          icon(icon='camera' :size="20" color="#5096ec")-camera
+    .post
+    .post-header
+      a.post-author(href='#')
+        img(src='../../assets/image/avatar.png' alt='')
+        .detail
+          .name Brooklyn Simmons
+          .job-title UI/UX Designer at Freelance
+          .date 7 hour ago
+      a.more(href='#')
+        icon(icon='equalizer2' :size="20" color="#5096ec")-dot-3
+    .post-content
+      p
+        | He said, Design is not just what it looks and feels like. Design is how it work
+      p
+        a(href='#') #stevejobs
+        a(href='#') #design
+        a(href='#') #apple
+      p
+        img(src='../../assets/image/stevejobs.png' alt='')
+    .post-alt-detail
+      .likes
+        icon(icon='heart' :size="20" color="#5096ec")-heart
+        icon(icon='point-right' :size="20" color="#5096ec")-thumbs-up
+        | 172
+      .comments
+        | 10 Comment
+    .post-actions
+      a(href='#')
+        icon(icon='heart' :size="20" color="#5096ec")-thumbs-up
+        |  Like
+      a(href='#')
+        icon(icon='quotes-left' :size="20" color="#5096ec")-message
+        |  Comment
+      a(href='#')
+        icon(icon='share' :size="20" color="#5096ec")-share
+        |  Share
+      a(href='#')
+        icon(icon='forward' :size="20" color="#5096ec")-send
+        |  Send
+    .post-comment-form
+      img(src='../../assets/image/avatar.png' alt='')
+      .textarea
+        textarea(name='' placeholder='Write comment' id='' cols='30' rows='10')
+        label
+          input(type='file' accept='image/*')
+          icon(icon='camera' :size="20" color="#5096ec")-camera
+    .post
+    .post-header
+      a.post-author(href='#')
+        img(src='../../assets/image/avatar.png' alt='')
+        .detail
+          .name Brooklyn Simmons
+          .job-title UI/UX Designer at Freelance
+          .date 7 hour ago
+      a.more(href='#')
+        icon(icon='equalizer2' :size="20" color="#5096ec")-dot-3
+    .post-content
+      p
+        | He said, Design is not just what it looks and feels like. Design is how it work
+      p
+        a(href='#') #stevejobs
+        a(href='#') #design
+        a(href='#') #apple
+      p
+        img(src='../../assets/image/stevejobs.png' alt='')
+    .post-alt-detail
+      .likes
+        icon(icon='heart' :size="20" color="#5096ec")-heart
+        icon(icon='point-right' :size="20" color="#5096ec")-thumbs-up
+        | 172
+      .comments
+        | 10 Comment
+    .post-actions
+      a(href='#')
+        icon(icon='heart' :size="20" color="#5096ec")-thumbs-up
+        |  Like
+      a(href='#')
+        icon(icon='quotes-left' :size="20" color="#5096ec")-message
+        |  Comment
+      a(href='#')
+        icon(icon='share' :size="20" color="#5096ec")-share
+        |  Share
+      a(href='#')
+        icon(icon='forward' :size="20" color="#5096ec")-send
+        |  Send
+    .post-comment-form
+      img(src='../../assets/image/avatar.png' alt='')
+      .textarea
+        textarea(name='' placeholder='Write comment' id='' cols='30' rows='10')
+        label
+          input(type='file' accept='image/*')
+          icon(icon='camera' :size="20" color="#5096ec")-camera
+    .post
+    .post-header
+      a.post-author(href='#')
+        img(src='../../assets/image/avatar.png' alt='')
+        .detail
+          .name Brooklyn Simmons
+          .job-title UI/UX Designer at Freelance
+          .date 7 hour ago
+      a.more(href='#')
+        icon(icon='equalizer2' :size="20" color="#5096ec")-dot-3
+    .post-content
+      p
+        | He said, Design is not just what it looks and feels like. Design is how it work
+      p
+        a(href='#') #stevejobs
+        a(href='#') #design
+        a(href='#') #apple
+      p
+        img(src='../../assets/image/stevejobs.png' alt='')
+    .post-alt-detail
+      .likes
+        icon(icon='heart' :size="20" color="#5096ec")-heart
+        icon(icon='point-right' :size="20" color="#5096ec")-thumbs-up
+        | 172
+      .comments
+        | 10 Comment
+    .post-actions
+      a(href='#')
+        icon(icon='heart' :size="20" color="#5096ec")-thumbs-up
+        |  Like
+      a(href='#')
+        icon(icon='quotes-left' :size="20" color="#5096ec")-message
+        |  Comment
+      a(href='#')
+        icon(icon='share' :size="20" color="#5096ec")-share
+        |  Share
+      a(href='#')
+        icon(icon='forward' :size="20" color="#5096ec")-send
+        |  Send
+    .post-comment-form
+      img(src='../../assets/image/avatar.png' alt='')
+      .textarea
+        textarea(name='' placeholder='Write comment' id='' cols='30' rows='10')
+        label
+          input(type='file' accept='image/*')
+          icon(icon='camera' :size="20" color="#5096ec")-camera
 </template>
 
 <style lang="scss" scoped>
@@ -264,7 +636,7 @@ export default {
           &:hover {
             background: #f7f7f7;
           }
-          i {
+          svg {
             margin-right: 8px;
             font-size: 16px;
             &.icon-camera {
@@ -313,7 +685,7 @@ export default {
         position: relative;
         top: -2px;
       }
-      i {
+      svg {
         position: absolute;
         right: 0;
         font-size: 12px;
@@ -394,7 +766,7 @@ export default {
         margin-right: 15px;
         display: flex;
         align-items: center;
-        i {
+        svg {
           font-size: 20px;
           margin-right: 5px;
         }
@@ -429,7 +801,7 @@ export default {
           margin-top: -1px;
         }
       }
-      i {
+      svg {
         font-size: 14px;
         margin-right: 10px;
         position: relative;

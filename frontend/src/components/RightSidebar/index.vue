@@ -1,5 +1,11 @@
 <script>
-export default {}
+import Icon from '../Icon'
+export default {
+  name: 'RightSidebar',
+  components: {
+    Icon,
+  },
+}
 </script>
 
 <template lang="pug">
@@ -15,7 +21,7 @@ export default {}
             span.name Techin Asia Indonesia
             span.alt-name Corporate - Online Media
         a(href='#')
-          i.icon-plus
+          icon(icon='plus' :size="14" color="#5096ec")
       li
         a(href='#')
           span.image
@@ -24,7 +30,7 @@ export default {}
             span.name Techin Asia Indonesia
             span.alt-name Corporate - Online Media
         a(href='#')
-          i.icon-plus
+          icon(icon='plus' :size="14" color="#5096ec")
       li
         a(href='#')
           span.image
@@ -33,7 +39,7 @@ export default {}
             span.name Techin Asia Indonesia
             span.alt-name Corporate - Online Media
         a(href='#')
-          i.icon-plus
+          icon(icon='plus' :size="14" color="#5096ec")
     a.widget-button(href='#')
       | See All Recomendation
   .widget.widget-marketing
@@ -43,7 +49,7 @@ export default {}
         span.description
           | Get the latest news and job vacancies
       a.more-btn(href='#')
-        i.icon-dot-3
+        icon(icon='equalizer2' :size="20" color="#5096ec")
     .get-updates
       .avatars
         a(href='#')
