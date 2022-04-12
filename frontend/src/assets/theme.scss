@@ -2,7 +2,26 @@
 
 @import '../assets/_icon-font.scss';
 
+:root {
+  --color: #006699;
+}
+
 body {
   font-family: 'Roboto', sans-serif;
-  background-color: #f5f6f8;
+  // background-color: #f5f6f8;
+  background-color: rgba(244, 242, 239);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  border: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+
+  &:focus {
+    outline: 0;
+  }
 }
