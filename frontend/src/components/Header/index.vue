@@ -1,18 +1,26 @@
 <script>
 import Icon from '../Icon/index.vue'
+import SettingsPopup from './settings-popup.vue'
 export default {
   name: 'Header',
+  data() {
+    return {
+      showPopup: false,
+    }
+  },
   components: {
     Icon,
+    SettingsPopup,
+  },
+  methods: {
+    togglePopup() {
+      this.showPopup = !this.showPopup
+    },
   },
 }
 </script>
 
 <template lang="pug">
-//- #nav
-  //-   router-link(to="/") Home
-  //-   span &nbsp;|&nbsp;
-  //-   router-link(to="/about") About
 header.header
   .container
     a.logo(href='#')
@@ -23,36 +31,33 @@ header.header
     nav.menu
       ul
         li
-          a(href='#')
+          router-link(to="/")
             icon( icon='home' :size="19" color="#5096ec")
             span Home
         li
-          a(href='#')
+          router-link(to="/users")
             icon( icon='user' :size="19" color="#5096ec")
             span Users
         li
-          a(href='#')
+          router-link(to="/jobs")
             icon( icon='briefcase' :size="19" color="#5096ec")
             span Jobs
         li
-          a(href='#')
+          router-link(to="/messages")
             icon( icon='pencil' :size="19" color="#5096ec")
             span Messaging
         li
-          a(href='#')
+          router-link(to="/notifications")
             icon( icon='box' :size="19" color="#5096ec")
             span Notifications
-        //- li
-        //-   a(href='#')
-        //-     icon( icon='play' :size="20" color="#5096ec")
-        //-     span Applications
-    .user-menu
-      a(href='#')
-        span.detail
-          span.name Cameron Williamson
-          span.status.online Online
-        img(src='../../assets/image/avatar.png' alt='')
-        icon(icon="arrow-down" :size='14' color="#5096ec")
+    .user-menu(v-on:click="togglePopup")
+      span.detail
+        span.name Cameron Williamson
+        span.status.online Online
+      img(src='../../assets/image/avatar.png' alt='')
+      icon(icon="arrow-down" :size='14' color="#5096ec")
+    .popup-container(:class="{ 'show': showPopup }" v-if="showPopup")
+      settings-popup(:togglePopup="togglePopup")
   
 </template>
 
@@ -71,6 +76,7 @@ header.header
     align-items: center;
     max-width: 1140px;
     margin: auto;
+    position: relative;
 
     .logo {
       img {
@@ -141,47 +147,45 @@ header.header
     }
 
     .user-menu {
-      > a {
+      display: flex;
+      align-items: center;
+
+      .detail {
         display: flex;
-        align-items: center;
+        flex-direction: column;
+        text-align: right;
+        margin-right: 6px;
 
-        .detail {
-          display: flex;
-          flex-direction: column;
-          text-align: right;
-          margin-right: 6px;
-
-          .name {
-            font-size: 12px;
-            color: #17272f;
-          }
-
-          .status {
-            font-size: 10px;
-
-            &.online {
-              color: #31b057;
-            }
-
-            &.offline {
-              color: #b03131;
-            }
-          }
-        }
-
-        img {
-          width: 24px;
-          height: 24px;
-          min-width: 24px;
-          border-radius: 50%;
-          object-fit: cover;
-        }
-
-        svg {
-          color: #a7b4cc;
+        .name {
           font-size: 12px;
-          margin-left: 5px;
+          color: #17272f;
         }
+
+        .status {
+          font-size: 10px;
+
+          &.online {
+            color: #31b057;
+          }
+
+          &.offline {
+            color: #b03131;
+          }
+        }
+      }
+
+      img {
+        width: 24px;
+        height: 24px;
+        min-width: 24px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+
+      svg {
+        color: #a7b4cc;
+        font-size: 12px;
+        margin-left: 5px;
       }
     }
   }
