@@ -1,26 +1,32 @@
 <script>
-import Header from './components/Header/index.vue'
+import { mapGetters, mapActions } from 'vuex'
 export default {
   name: 'app',
-  components: {
-    Header,
+  computed: {
+    ...mapGetters('account', ['isLoggedIn']),
+    selectedKeys() {
+      return [this.$route.name]
+    },
+    layout() {
+      return `${this.$route.meta.layout || 'feed'}-layout`
+    },
+  },
+  async created() {
+    await this.fetchSession()
+    this.isLoggedIn ? this.$router.push('/') : this.$router.push('/login')
+  },
+  methods: {
+    ...mapActions('account', ['fetchSession']),
   },
 }
 </script>
 
 <template lang="pug">
 #app
-  .layout
-    Header
-    router-view
+  .layout-wrapper
+    component(:is='layout' :selectedKeys="selectedKeys")
 </template>
 
 <style lang="scss">
 @import '@/assets/theme.scss';
-.layout {
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto 1fr;
-}
 </style>
