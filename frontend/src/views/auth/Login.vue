@@ -1,24 +1,19 @@
 <template lang="pug">
-.login
-  a-row(type="flex" justify="center" align="middle")
-    a-col(:span="7")
-      a-card
-        a-form(:form="form" @submit="submitLogin")
-          a-divider Login
-          a-form-item(v-if="$route.query.registerSuccess")
-            a-alert(type="success" message="You are now registered!" description="Use your credentials to log in below.")
-          a-form-item(v-if="$route.query.logoutSuccess")
-            a-alert(type="success" message="You have successfully logged out." description="Use your credentials to log in below.")
-          a-form-item
-            a-input(placeholder="E-mail address" v-decorator='validationRules.email')
-          a-form-item
-            a-input(type="password" placeholder="Password" v-decorator="validationRules.password")
-          a-form-item(v-if="backendError")
-            a-alert(class="backend-errors" :message="backendError.message" type="error")
-          a-form-item
-            a-button(type="primary" html-type="submit" :loading="loading" block) Login
-          a-form-item
-            center Don't have an account? <router-link to="/register">Create account</router-link>
+.wrapper
+  form(@submit='submitLogin')
+    .form-item
+      input(type="text", placeholder="E-mail address" name="email" value="email" v-model="email")
+    .form-item
+      input(type="password", placeholder="Password" name="password" value="password" v-model="password")
+    .form-item
+      p.backend-errors(v-if="backendError") {{backendError?.message}}
+    .form-item
+      button(type="primary", html-type="submit", block) Login
+    p(v-if="loading") Loading...
+    .form-item
+      p I do not have an account.
+        router-link(to="/register") 
+          b Register
 </template>
 
 <script>
@@ -28,91 +23,72 @@ export default {
   name: 'login',
   data() {
     return {
-      loading: false,
-      validationRules: {
-        email: [
-          'email',
-          {
-            rules: [
-              { type: 'email', message: 'E-mail is not valid.' },
-              { required: true, message: 'E-mail is required.' },
-            ],
-            normalize: value => value.toLowerCase(),
-          },
-        ],
-        password: [
-          'password',
-          {
-            rules: [
-              { required: true, message: 'Password is required.' },
-              { min: 8, message: 'Password should have a minimum length of 8 characters.\n' },
-              {
-                pattern: /[a-zA-Z]/,
-                message: 'Password should include at least one letter.\n',
-              },
-              { pattern: /\d/, message: 'Password should include at least one digit.\n' },
-              { pattern: /[\W_]/, message: 'Password should include at least one symbol.\n' },
-              { pattern: /^\S+$/, message: 'Password should not include spaces.\n' },
-              { validator: this.validateToNextPassword },
-            ],
-          },
-        ],
-      },
       backendError: null,
+      loading: false,
+      email: '',
+      password: '',
     }
   },
   methods: {
     ...mapActions('account', ['login']),
-    submitLogin(e) {
+    async submitLogin(e) {
       e.preventDefault()
       this.backendError = null
-      this.form.validateFieldsAndScroll(async (err, values) => {
-        if (err) return
-
-        try {
-          await this.login(values)
-          this.$router.push('/dashboard')
-        } catch (e) {
-          this.backendError = e.response.data
-        }
-      })
+      this.loading = true
+      try {
+        await this.login({
+          email: this.email,
+          password: this.password,
+        })
+        this.$router.push('/')
+      } catch (e) {
+        this.backendError = e.response.data
+      } finally {
+        this.loading = false
+      }
     },
-    handleConfirmBlur(e) {
-      const value = e.target.value
-      this.confirmPasswordDirty = this.confirmPasswordDirty || !!value
-    },
-    onValuesChange() {
-      this.backendError = null
-    },
-  },
-  beforeCreate() {
-    const component = this
-    this.form = this.$form.createForm(this, {
-      name: 'login',
-      onValuesChange() {
-        component.backendError = null
-      },
-    })
   },
 }
 </script>
 
-<style lang="scss">
-.ant-form-explain {
-  white-space: pre-line;
-}
-</style>
-
 <style lang="scss" scoped>
-.login .ant-row-flex {
-  min-height: 90vh;
-}
+.wrapper {
+  width: 400px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
 
-.ant-card {
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-}
+  form {
+    width: 100%;
 
-.backend-errors {
-  white-space: pre-line;
+    .form-item {
+      margin-bottom: 20px;
+    }
+    input {
+      width: 100%;
+      padding: 12px;
+      border-radius: 4px;
+      box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+    }
+
+    .backend-errors {
+      color: red;
+      font-size: 14px;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    button {
+      background-color: rgba(56, 98, 182);
+      padding: 14px 24px;
+      border-radius: 10px;
+      color: #fff;
+      font-size: 18px;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+      transition: 1s all ease;
+    }
+  }
 }
 </style>
