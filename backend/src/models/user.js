@@ -11,21 +11,22 @@ const userSchema = new Schema(
       minlength: 2,
       maxlength: 64,
     },
-    username: { type: String, unique: true, required: true },
     email: { type: String, required: true, unique: true },
     previousCompany: {
       type: 'ObjectId',
       ref: 'Company',
       autopopulate: true,
     },
-    isJob: {
-      type: Boolean,
-      required: true,
-    },
     currentCompany: {
       type: 'ObjectId',
       ref: 'Company',
       autopopulate: true,
+    },
+    isJob: {
+      type: Boolean,
+    },
+    title: {
+      type: String,
     },
     comments: {
       type: 'ObjectId',
