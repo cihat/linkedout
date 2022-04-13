@@ -78,14 +78,14 @@ export default {
       a(href='#')
         | Business Services
       a(href='#')
-        | Get the LinkedIn app
+        | Get the LinkedOut app
       a(href='#')
         | More
     .copyright
       p
-        | LinkedIn Corporation &copy; 2020
+        | LinkedOut Corporation &copy; 2020
       a(href='#')
-        img(src='../../assets/image/logo.svg' alt='')
+        img(src='../../assets/image/new-linkedout-logo.svg' alt='')
 </template>
 
 <style lang="scss" scoped>
