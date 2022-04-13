@@ -1,9 +1,14 @@
 <script>
 import Icon from '../Icon/index.vue'
+import { mapGetters } from 'vuex'
+
 export default {
   name: 'LeftSidebar',
   components: {
     Icon,
+  },
+  computed: {
+    ...mapGetters('account', ['user']),
   },
 }
 </script>
@@ -15,7 +20,7 @@ export default {
       .cover
       .avatar
         img(src='../../assets/image/avatar.png' alt='')
-      .name Cameron Williamson
+      .name {{user.name}}
       .job-title Business Analyst
     ul
       li
