@@ -1,5 +1,6 @@
 import { createStore } from 'vuex'
 import axios from 'axios'
+import account from './account'
 
 export default createStore({
   state: {},
@@ -9,5 +10,7 @@ export default createStore({
       return (await axios.get('/api/account')).data
     },
   },
-  modules: {},
+  modules: {
+    account,
+  },
 })

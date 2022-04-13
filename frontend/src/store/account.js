@@ -17,12 +17,15 @@ const account = {
   state: () => ({
     user: null,
   }),
+
   mutations: {
     [mutations.SET_USER](state, user) {
       state.user = user
     },
   },
-
+  getters: {
+    isLoggedIn: state => (state.user ? true : false),
+  },
   actions: {
     async [actions.INIT]({ dispatch }) {
       await dispatch(actions.FETCH_SESSION)
