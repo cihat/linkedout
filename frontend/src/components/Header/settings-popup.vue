@@ -33,8 +33,8 @@ export default {
     li 
       router-link(to="/help")
         p Help
-    li(v-on:click="logout")
-      router-link(to="/login") Sign Out
+    li
+      router-link(to="/login" v-on:click="logout") Sign Out
 
   .close-button(v-on:click='togglePopup')
     icon( icon='exit' :size="20" color="#5096ec")
