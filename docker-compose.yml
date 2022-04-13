@@ -11,8 +11,6 @@ services:
       - "traefik.http.routers.frontend.entrypoints=web"
     ports:
       - 8080
-    environment:
-      - CHOKIDAR_USEPOLLING=true
     volumes:
       - ./frontend/src:/app/src
       - ./frontend/public:/app/public
