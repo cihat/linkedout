@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Login from '../views/auth/Login.vue'
 import Register from '../views/auth/Register.vue'
+import NotFound from '../components/NotFound'
 import Feed from '../views/Feed.vue'
 import store from '../store'
 
@@ -34,6 +35,11 @@ const routes = [
       if (store.state.account.user) return next('/')
       return next()
     },
+  },
+  {
+    path: '/*',
+    name: 'not-found',
+    component: NotFound,
   },
   // {
   //   path: '/feed',
