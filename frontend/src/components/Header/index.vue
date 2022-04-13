@@ -7,7 +7,7 @@ export default {
   name: 'Header',
   data() {
     return {
-      showPopup: false,
+      showPopupState: true,
     }
   },
   components: {
@@ -18,8 +18,11 @@ export default {
     ...mapGetters('account', ['user']),
   },
   methods: {
-    togglePopup() {
-      this.showPopup = !this.showPopup
+    showPopup() {
+      this.showPopupState = true
+    },
+    hidePopup() {
+      this.showPopupState = false
     },
   },
 }
@@ -29,7 +32,8 @@ export default {
 header.header
   .container
     a.logo(href='#')
-      img(src='../../assets/image/new-linkedout-logo.svg' alt='LinkedOut Logo')
+      router-link(to="/")
+        img(src='../../assets/image/new-linkedout-logo.svg' alt='LinkedOut Logo')
     .search
       icon( icon='camera' :size="20" color="#5096ec")
       input(type='text' placeholder='Search...')
@@ -55,14 +59,14 @@ header.header
           router-link(to="/notifications")
             icon( icon='box' :size="19" color="#5096ec")
             span Notifications
-    .user-menu(v-on:click="togglePopup")
+    .user-menu(v-on:click="showPopup" v-click-outside="hidePopup")
       span.detail
         span.name {{user.name}}
         span.status.online Online
       img(src='../../assets/image/avatar.png' alt='')
       icon(icon="arrow-down" :size='14' color="#5096ec")
-    .popup-container(:class="{ 'show': showPopup }" v-if="showPopup")
-      settings-popup(:togglePopup="togglePopup")
+    .popup-container(v-if="showPopupState")
+      settings-popup(:showPopup="showPopup" :hidePopup='hidePopup')
   
 </template>
 

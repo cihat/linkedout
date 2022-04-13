@@ -4,9 +4,11 @@ import Icon from '../Icon'
 export default {
   name: 'popup',
   props: {
-    togglePopup: {
+    showPopup: {
       type: Function,
-      required: true,
+    },
+    hidePopup: {
+      type: Function,
     },
   },
   components: {
@@ -19,7 +21,7 @@ export default {
 </script>
 
 <template lang="pug">
-.settings-popup-container
+.settings-popup-container()
   ul
     li 
       router-link(to="/")
@@ -34,10 +36,12 @@ export default {
       router-link(to="/help")
         p Help
     li
-      router-link(to="/login" v-on:click="logout") Sign Out
+      router-link(to="/login" v-on:click="logout") 
+        span Sign Out
+        icon( icon='exit' :size="20" color="#5096ec")
 
-  .close-button(v-on:click='togglePopup')
-    icon( icon='exit' :size="20" color="#5096ec")
+  .close-button(v-on:click='hidePopup')
+    icon( icon='arrow-up' :size="20" color="#5096ec")
 
 
 </template>
