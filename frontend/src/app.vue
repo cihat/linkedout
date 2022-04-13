@@ -12,11 +12,11 @@ export default {
     },
   },
   async created() {
-    await this.fetchSession()
-    this.isLoggedIn ? this.$router.push('/') : this.$router.push('/login')
+    await this.init()
+    !this.isLoggedIn ? this.$router.push({ path: '/login' }) : this.$router.push({ path: '/' })
   },
   methods: {
-    ...mapActions('account', ['fetchSession']),
+    ...mapActions('account', ['init']),
   },
 }
 </script>
