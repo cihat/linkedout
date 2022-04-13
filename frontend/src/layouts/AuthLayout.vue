@@ -14,12 +14,6 @@ export default {
   computed: {
     ...mapGetters('account', ['isLoggedIn']),
   },
-  methods: {
-    ...mapActions('account', ['fetchSession']),
-  },
-  async created() {
-    await this.fetchSession()
-  },
 }
 </script>
 
