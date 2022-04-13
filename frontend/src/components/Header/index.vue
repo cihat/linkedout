@@ -1,6 +1,8 @@
 <script>
 import Icon from '../Icon/index.vue'
 import SettingsPopup from './settings-popup.vue'
+import { mapGetters } from 'vuex'
+
 export default {
   name: 'Header',
   data() {
@@ -11,6 +13,9 @@ export default {
   components: {
     Icon,
     SettingsPopup,
+  },
+  computed: {
+    ...mapGetters('account', ['user']),
   },
   methods: {
     togglePopup() {
@@ -52,7 +57,7 @@ header.header
             span Notifications
     .user-menu(v-on:click="togglePopup")
       span.detail
-        span.name Cameron Williamson
+        span.name {{user.name}}
         span.status.online Online
       img(src='../../assets/image/avatar.png' alt='')
       icon(icon="arrow-down" :size='14' color="#5096ec")
