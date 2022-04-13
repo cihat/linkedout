@@ -25,6 +25,7 @@ const account = {
   },
   getters: {
     isLoggedIn: state => (state.user ? true : false),
+    user: state => state.user,
   },
   actions: {
     async [actions.INIT]({ dispatch }) {
