@@ -2,15 +2,13 @@
 .wrapper
   form(@submit='register')
     .form-item
-      input(type="text", placeholder="Full Name" name="name" value="name" v-model="name")
+      input(type="text", placeholder="Full Name" name="name" v-model="name")
     .form-item
-      input(type="text", placeholder="User Name" name="username" value="username" v-model="username")
+      input(type="text", placeholder="E-mail address" name="email" v-model="email")
     .form-item
-      input(type="text", placeholder="E-mail address" name="email" value="email" v-model="email")
+      input(type="password", placeholder="Password" name="password" v-model="password")
     .form-item
-      input(type="password", placeholder="Password" name="password" value="password" v-model="password")
-    .form-item
-      input(type="password", placeholder="Password confirmation" name="passwordConfirmation" value="passwordConfirmation" v-model="passwordConfirmation")
+      input(type="password", placeholder="Password confirmation" name="passwordConfirmation" v-model="passwordConfirmation")
     .form-item
       p.backend-errors(v-if="backendError") {{backendError?.message}}
     .form-item
@@ -34,25 +32,23 @@ export default {
       email: '',
       password: '',
       name: '',
-      username: '',
       passwordConfirmation: '',
     }
   },
   methods: {
     ...mapActions('account', ['registerUser']),
-    async submitLogin(e) {
+    async register(e) {
       e.preventDefault()
       this.backendError = null
       this.loading = true
       try {
         await this.registerUser({
+          name: this.name,
           email: this.email,
           password: this.password,
-          name: this.name,
-          username: this.username,
           passwordConfirmation: this.passwordConfirmation,
         })
-        this.$router.push('/')
+        this.$router.push('/login')
       } catch (e) {
         this.backendError = e.response.data
       } finally {
@@ -79,6 +75,27 @@ export default {
     input {
       width: 100%;
       padding: 12px;
+      border-radius: 4px;
+      box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+    }
+
+    .backend-errors {
+      color: red;
+      font-size: 14px;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    button {
+      background-color: rgba(56, 98, 182);
+      padding: 14px 24px;
+      border-radius: 10px;
+      color: #fff;
+      font-size: 18px;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+      transition: 1s all ease;
     }
   }
 }
