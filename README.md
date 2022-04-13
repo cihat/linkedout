@@ -1,28 +1,30 @@
-# stack
+# Linkedout
 
-A starter repository for MongoDB, Node.js, and Vue.js, with a local environment based on Docker.
+![Project ScreenShot](https://user-images.githubusercontent.com/57585087/163198891-881d4046-f9a9-4b88-9a1a-61c0d0c87b9e.png)
 
-# Installation
+![Project ScreenShot](https://user-images.githubusercontent.com/57585087/163198910-bc7f78b0-67e7-40aa-adf9-0b9e964ec721.png)
 
-## Running the stack
+![Project ScreenShot](https://user-images.githubusercontent.com/57585087/163198911-6082a517-cb01-4151-9ed9-af031b840eb2.png)
+
+## Running project
 
 ```sh
 $ docker-compose up
 ```
 
-## Accessing the stack from a browser
+## Accessing the linkedout from a browser
 
-The starter stack works with a load balancer that binds to ports 80 and 443. It currently serves the domain http://stack.localhost. In order to reach the frontend through the stack, you need to edit your `hosts` file (usually under `/etc/hosts` in UNIX environments and `C:\Windows\System32\Drivers\etc\hosts` in Windows) and add the following line:
+The starter linkedout works with a load balancer that binds to ports 80 and 443. It currently serves the domain http://linkedout.localhost. In order to reach the frontend through the linkedout, you need to edit your `hosts` file (usually under `/etc/hosts` in UNIX environments and `C:\Windows\System32\Drivers\etc\hosts` in Windows) and add the following line:
 
 ```
-127.0.0.1 stack.localhost
+127.0.0.1 linkedout.localhost
 ```
 
-Now if you visit http://stack.localhost, you will be greeted with the frontend starter project.
+Now if you visit http://linkedout.localhost, you will be greeted with the frontend starter project.
 
 ## Changing the local domain
 
-If you wish to use a domain name other than http://stack.localhost, simply set the environment variable `DOMAIN` to any domain you want.
+If you wish to use a domain name other than http://linkedout.localhost, simply set the environment variable `DOMAIN` to any domain you want.
 
 ```sh
 $ DOMAIN=another-domain.localhost docker-compose up
