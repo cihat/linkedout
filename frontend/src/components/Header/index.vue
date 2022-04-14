@@ -7,7 +7,7 @@ export default {
   name: 'Header',
   data() {
     return {
-      showPopupState: true,
+      showPopupState: false,
     }
   },
   components: {
