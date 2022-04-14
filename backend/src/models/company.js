@@ -9,6 +9,11 @@ const companySchema = new Schema(
       ref: 'Comment',
       autopopulate: true,
     },
+    founder: {
+      type: 'ObjectId',
+      ref: 'User',
+      autopopulate: true,
+    },
     employeeNumber: Number,
     name: String,
   },
