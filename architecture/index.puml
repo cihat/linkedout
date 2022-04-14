@@ -1,0 +1,28 @@
+@startuml
+class Users {
+  _id: ID;
+  name: String;
+  title: String;
+  email: String;
+  previousCompany: String;
+  currentCompany: String;
+  isJob: Boolean;
+  comments: Object;
+}
+
+class Company {
+  _id: ID;
+  name: String;
+  since: Date
+  comments: Object;
+  founder: String;
+  employeeNumber: Number;
+}
+
+class Comments { 
+  author: Object;
+  comment: String;
+  company: Object;
+}
+
+@enduml
