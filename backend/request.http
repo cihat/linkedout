@@ -1,14 +1,31 @@
-GET http://localhost:65223/users HTTP/1.1
+GET http://localhost:65223/account HTTP/1.1
 content-type: application/json
 
 ###
 
-GET http://localhost:65223/users/login HTTP/1.1
+GET http://localhost:65223/account/login HTTP/1.1
 content-type: application/json
 
 ###
 
-POST  http://localhost:65223/users/register HTTP/1.1
+POST  http://localhost:65223/account/register HTTP/1.1
 content-type: application/json
 
 {"username": "John Doe", "password": "testtest02"}
+
+###
+
+GET http://localhost:65027/account/session
+content-type: application/json
+
+{
+  "user": {
+    "email": "bahadirkaltakkiran2@hotmail.com",
+    "password": "cihatdev123!"
+  }
+}
+
+###
+
+POST http://localhost:65027/account/create-post
+Content-Type: application/json
