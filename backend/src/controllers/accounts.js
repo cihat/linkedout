@@ -1,6 +1,7 @@
 const User = require('../models/user')
 const Validator = require('async-validator').default
 const passport = require('passport')
+const userService = require('../services/user-service')
 
 exports.findUsers = async (req, res) => {
   res.send(await User.find())
@@ -72,4 +73,13 @@ exports.deleteSession = async (req, res, next) => {
   await req.logout()
 
   res.sendStatus(200)
+}
+
+exports.updateName = async (req, res, next) => {
+  try {
+    await userService.updateName(req.user._id, 'New name')
+    res.sendStatus(200)
+  } catch (e) {
+    next(e)
+  }
 }
