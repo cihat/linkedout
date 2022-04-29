@@ -10,8 +10,17 @@ const userSchema = new Schema(
       required: true,
       minlength: 2,
       maxlength: 64,
+      unique: false,
     },
+    username: { type: String, unique: true, required: false },
     email: { type: String, required: true, unique: true },
+    isJob: {
+      type: Boolean,
+    },
+    title: {
+      type: String,
+    },
+    sessionId: String,
     previousCompany: {
       type: 'ObjectId',
       ref: 'Company',
@@ -21,12 +30,6 @@ const userSchema = new Schema(
       type: 'ObjectId',
       ref: 'Company',
       autopopulate: true,
-    },
-    isJob: {
-      type: Boolean,
-    },
-    title: {
-      type: String,
     },
     comments: {
       type: 'ObjectId',
