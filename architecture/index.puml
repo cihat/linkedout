@@ -13,7 +13,7 @@ class Users {
 class Company {
   _id: ID;
   name: String;
-  since: Date
+  since: Date;
   comments: Object;
   founder: String;
   employeeNumber: Number;
