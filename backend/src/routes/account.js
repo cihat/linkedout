@@ -1,19 +1,19 @@
 const express = require('express')
 const router = express.Router()
 const passport = require('passport')
-const accountsController = require('../controllers/accounts')
+const accountController = require('../controllers/account')
 
-router.get('/', accountsController.findUsers)
+router.get('/', accountController.findUsers)
 
-router.post('/register', accountsController.register)
+router.post('/register', accountController.register)
 
 router.post(
   '/session',
-  accountsController.preventLoginForLoggedInUsers,
+  accountController.preventLoginForLoggedInUsers,
   passport.authenticate('local', {
     failWithError: true,
   }),
-  accountsController.postSession,
+  accountController.login,
   (err, req, res, next) => {
     if (err.status != 401) return next(err)
 
@@ -23,8 +23,8 @@ router.post(
   }
 )
 
-router.get('/session', accountsController.getSession)
+router.get('/session', accountController.checkLoggedIn)
 
-router.delete('/session', accountsController.deleteSession)
+router.delete('/session', accountController.logout)
 
 module.exports = router
