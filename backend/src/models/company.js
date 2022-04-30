@@ -4,11 +4,13 @@ const Schema = mongoose.Schema
 
 const companySchema = new Schema(
   {
-    comment: {
-      type: 'ObjectId',
-      ref: 'Comment',
-      autopopulate: true,
-    },
+    comment: [
+      {
+        type: 'ObjectId',
+        ref: 'Comment',
+        autopopulate: true,
+      },
+    ],
     founder: {
       type: 'ObjectId',
       ref: 'User',

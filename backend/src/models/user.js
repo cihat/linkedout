@@ -31,11 +31,13 @@ const userSchema = new Schema(
       ref: 'Company',
       autopopulate: true,
     },
-    comments: {
-      type: 'ObjectId',
-      ref: 'Comment',
-      autopopulate: true,
-    },
+    comments: [
+      {
+        type: 'ObjectId',
+        ref: 'Comment',
+        autopopulate: true,
+      },
+    ],
   },
   { timestamps: true }
 )
