@@ -1,7 +1,6 @@
 const User = require('../models/user')
 const Validator = require('async-validator').default
 const passport = require('passport')
-const userService = require('../services/user-service')
 
 exports.findUsers = async (req, res) => {
   res.send(await User.find())
@@ -61,25 +60,16 @@ exports.preventLoginForLoggedInUsers = (req, res, next) => {
   next(req.user && new Error('User is already logged in'))
 }
 
-exports.postSession = async (req, res) => {
+exports.login = async (req, res) => {
   res.send(req.user)
 }
 
-exports.getSession = async (req, res) => {
+exports.checkLoggedIn = (req, res) => {
   res.send(req.user)
 }
 
-exports.deleteSession = async (req, res, next) => {
+exports.logout = async (req, res, next) => {
   await req.logout()
 
   res.sendStatus(200)
-}
-
-exports.updateName = async (req, res, next) => {
-  try {
-    await userService.updateName(req.user._id, 'New name')
-    res.sendStatus(200)
-  } catch (e) {
-    next(e)
-  }
 }
