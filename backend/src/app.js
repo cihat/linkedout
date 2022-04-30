@@ -12,6 +12,7 @@ const { errors } = require('celebrate')
 
 const indexRouter = require('./routes/index')
 const usersRouter = require('./routes/account')
+const companyRouter = require('./routes/company')
 
 const { mongoose } = require('./database-connection')
 
@@ -57,6 +58,7 @@ app.all('*', (req, res, next) => {
 
 app.use('/', indexRouter)
 app.use('/account', usersRouter)
+app.use('/company', companyRouter)
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
