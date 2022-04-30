@@ -5,4 +5,6 @@ const router = express.Router()
 
 router.post('/create', companyController.createCompany)
 
+router.post('/:companyId/comment', companyController.comment)
+
 module.exports = router
