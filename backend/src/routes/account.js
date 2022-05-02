@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router()
 const passport = require('passport')
 const accountController = require('../controllers/account')
+const postController = require('../controllers/post')
 
 router.get('/', accountController.findUsers)
 
@@ -26,5 +27,8 @@ router.post(
 router.get('/session', accountController.checkLoggedIn)
 
 router.delete('/session', accountController.logout)
+
+router.post('/post', postController.post)
+
 
 module.exports = router
