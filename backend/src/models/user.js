@@ -38,6 +38,13 @@ const userSchema = new Schema(
         autopopulate: true,
       },
     ],
+    posts: [
+      {
+        type: 'ObjectId',
+        ref: 'Post',
+        autopopulate: true,
+      },
+    ],
   },
   { timestamps: true }
 )
