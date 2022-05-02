@@ -1,0 +1,14 @@
+@startuml
+skinparam actorStyle awesome
+"Login the application" as (Login)
+:User: --> (Login)
+
+Login --> Application
+
+package Application {
+  usecase "Create Company" as ap1
+  usecase "Comment" as ap2
+  usecase "Firing Post" as ap3
+}
+
+@enduml
