@@ -107,7 +107,7 @@ export default {
       font-size: 14px;
       margin-bottom: 12px;
       img {
-        max-width: 100%;
+        width: 100%;
       }
       &:last-child {
         margin-bottom: 0;
