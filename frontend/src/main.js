@@ -6,6 +6,7 @@ import store from './store'
 import 'normalize.css'
 import AuthLayout from './layouts/AuthLayout.vue'
 import FeedLayout from './layouts/FeedLayout.vue'
+import './assets/styles/index.scss'
 // import 'ant-design-vue/dist/antd.css'
 
 import {
