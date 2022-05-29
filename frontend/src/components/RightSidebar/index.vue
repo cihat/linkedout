@@ -90,8 +90,8 @@ export default {
 
 <style lang="scss" scoped>
 .sidebar {
-  min-width: 270px;
-  width: 270px;
+  // min-width: 270px;
+  // width: 270px;
 
   .widget {
     margin-bottom: 16px;
@@ -182,7 +182,7 @@ export default {
             justify-content: center;
 
             img {
-              max-width: 100%;
+              // max-width: 100%;
             }
           }
           .detail {

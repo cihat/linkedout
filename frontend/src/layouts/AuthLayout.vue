@@ -18,21 +18,22 @@ export default {
 </script>
 
 <template lang="pug">
-.auth-layout
-  .header-wrapper
-    h1.title Linkedout
-    .github-link
-      a(href="https://github.com/cihat/linkedout" target='_blank')
-        icon(icon='github' :size="40" color="#000")
-  .linkedout-logo
-    img(src="../assets/image/new-linkedout-logo.svg", alt="Linkedout Logo")
-  router-view
+.container
+  .grid.col.col-12.col-xs-12.col-md-12.col-lg-12.col-xl-12
+    .auth-layout
+      .header-wrapper
+        .github-link
+          a(href="https://github.com/cihat/linkedout" target='_blank')
+            icon(icon='github' :size="40" color="#000")
+      .linkedout-logo
+        img(src="../assets/image/new-linkedout-logo.svg", alt="Linkedout Logo")
+      router-view
 </template>
 
 <style lang="scss" scoped>
 .auth-layout {
   min-height: 100vh;
-  max-width: 1140px;
+  // max-width: 1140px;
   margin: 0 auto;
   display: grid;
   // grid-template-columns: 1fr;
@@ -53,7 +54,8 @@ export default {
     align-items: center;
     margin-bottom: 16px;
     img {
-      max-width: 700px;
+      max-width: 1000px;
+      width: 100%;
       height: auto;
     }
   }

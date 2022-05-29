@@ -1,19 +1,21 @@
 <template lang="pug">
-.wrapper
-  form(@submit='submitLogin')
-    .form-item
-      input(type="text", placeholder="E-mail address" name="email" value="email" v-model="email")
-    .form-item
-      input(type="password", placeholder="Password" name="password" value="password" v-model="password")
-    .form-item
-      p.backend-errors(v-if="backendError") {{backendError?.message}}
-    .form-item
-      button(type="primary", html-type="submit", block) Login
-    p(v-if="loading") Loading...
-    .form-item
-      p I do not have an account.
-        router-link(to="/register") 
-          b Register
+.container
+  .grid.grid-center.col.col-12
+    .wrapper
+      form(@submit='submitLogin')
+        .form-item
+          input(type="text", placeholder="E-mail address" name="email" value="email" v-model="email")
+        .form-item
+          input(type="password", placeholder="Password" name="password" value="password" v-model="password")
+        .form-item
+          p.backend-errors(v-if="backendError") {{backendError?.message}}
+        .form-item
+          button(type="primary", html-type="submit", block) Login
+        p(v-if="loading") Loading...
+        .form-item
+          p I do not have an account.
+            router-link(to="/register") 
+              b Register
 </template>
 
 <script>

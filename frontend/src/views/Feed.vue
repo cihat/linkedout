@@ -17,26 +17,19 @@ export default {
 
 <template lang="pug">
 main
-  .container-width
-    .grid
+  .container
+    .grid.grid-center
       .col.col-12.col-xs-12.col-md-3.col-lg-3
         LeftSidebar
       .col.col-12.col-xs-12.col-md-6.col-lg-6
         Feed
       .col.col-12.col-xs-12.col-md-3.col-lg-3
         RightSidebar
-        //- Message
+      Message
 </template>
 
 <style lang="scss" scoped>
 .container {
-  width: 1140px;
   margin: 0 auto;
-}
-
-main {
-  .container {
-    display: flex;
-  }
 }
 </style>
