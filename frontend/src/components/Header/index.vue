@@ -31,43 +31,44 @@ export default {
 <template lang="pug">
 header.header
   .container
-    a.logo(href='#')
-      router-link(to="/")
-        img(src='../../assets/image/new-linkedout-logo.svg' alt='LinkedOut Logo')
-    .search
-      icon( icon='camera' :size="20" color="#5096ec")
-      input(type='text' placeholder='Search...')
-    nav.menu
-      ul
-        li
+    .grid.col.col-12.col-xs-12.col-md-12.col-lg-12.col-xl-12
+      .inner_container
+        a.logo(href='#')
           router-link(to="/")
-            icon( icon='home' :size="19" color="#5096ec")
-            span Home
-        li
-          router-link(to="/users")
-            icon( icon='user' :size="19" color="#5096ec")
-            span Users
-        li
-          router-link(to="/jobs")
-            icon( icon='briefcase' :size="19" color="#5096ec")
-            span Jobs
-        li
-          router-link(to="/messages")
-            icon( icon='pencil' :size="19" color="#5096ec")
-            span Messaging
-        li
-          router-link(to="/notifications")
-            icon( icon='box' :size="19" color="#5096ec")
-            span Notifications
-    .user-menu(v-on:click="showPopup" v-click-outside="hidePopup")
-      span.detail
-        span.name {{user.name}}
-        span.status.online Online
-      img(src='../../assets/image/avatar.png' alt='')
-      icon(icon="arrow-down" :size='14' color="#5096ec")
-    .popup-container(v-if="showPopupState")
-      settings-popup(:showPopup="showPopup" :hidePopup='hidePopup')
-  
+            img(src='../../assets/image/new-linkedout-logo.svg' alt='LinkedOut Logo')
+        .search
+          icon( icon='camera' :size="20" color="#5096ec")
+          input(type='text' placeholder='Search...')
+        nav.menu
+          ul
+            li
+              router-link(to="/")
+                icon( icon='home' :size="19" color="#5096ec")
+                span Home
+            li
+              router-link(to="/users")
+                icon( icon='user' :size="19" color="#5096ec")
+                span Users
+            li
+              router-link(to="/jobs")
+                icon( icon='briefcase' :size="19" color="#5096ec")
+                span Jobs
+            li
+              router-link(to="/messages")
+                icon( icon='pencil' :size="19" color="#5096ec")
+                span Messaging
+            li
+              router-link(to="/notifications")
+                icon( icon='box' :size="19" color="#5096ec")
+                span Notifications
+        .user-menu(v-on:click="showPopup" v-click-outside="hidePopup")
+          span.detail
+            span.name {{user.name}}
+            span.status.online Online
+          img(src='../../assets/image/avatar.png' alt='')
+          icon(icon="arrow-down" :size='14' color="#5096ec")
+        .popup-container(v-if="showPopupState")
+          settings-popup(:showPopup="showPopup" :hidePopup='hidePopup')  
 </template>
 
 <style lang="scss" scoped>
@@ -77,13 +78,14 @@ header.header
   position: sticky;
   top: 0;
   z-index: 10;
+  width: 100%;
 
-  .container {
+  .inner_container {
     height: 56px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    width: 100%;
     align-items: center;
-    max-width: 1140px;
     margin: auto;
     position: relative;
 
