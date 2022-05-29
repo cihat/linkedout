@@ -37,7 +37,7 @@ const routes = [
   {
     path: '/login',
     name: 'login',
-    // meta: { layout: 'auth' },
+    meta: { layout: 'auth' },
     component: Login,
     beforeEnter(to, from, next) {
       if (store.state.account.user) return next('/')
