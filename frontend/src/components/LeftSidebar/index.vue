@@ -80,8 +80,8 @@ export default {
 
 <style lang="scss" scoped>
 .sidebar {
-  min-width: 270px;
-  width: 270px;
+  // min-width: 270px;
+  // width: 270px;
 
   .widget {
     margin-bottom: 16px;

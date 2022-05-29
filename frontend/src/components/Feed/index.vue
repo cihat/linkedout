@@ -26,6 +26,5 @@ export default {
 <style lang="scss" scoped>
 .content {
   flex: 1;
-  margin: 0 30px;
 }
 </style>

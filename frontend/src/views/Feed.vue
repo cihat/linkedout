@@ -17,11 +17,15 @@ export default {
 
 <template lang="pug">
 main
-  .container
-    LeftSidebar
-    Feed
-    RightSidebar
-    Message
+  .container-width
+    .grid
+      .col.col-12.col-xs-12.col-md-3.col-lg-3
+        LeftSidebar
+      .col.col-12.col-xs-12.col-md-6.col-lg-6
+        Feed
+      .col.col-12.col-xs-12.col-md-3.col-lg-3
+        RightSidebar
+        //- Message
 </template>
 
 <style lang="scss" scoped>
