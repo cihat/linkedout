@@ -24,7 +24,7 @@ $base-unit: 8px !default;
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  margin: 0 ($base-unit * -1) 0 ($base-unit * -1);
+  // margin: 0 ($base-unit * -1) 0 ($base-unit * -1);
   //Use this modifier to remove gutters
   &.grid-nogutter {
     margin: 0;
