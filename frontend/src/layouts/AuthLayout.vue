@@ -1,7 +1,7 @@
 <script>
 import Login from '../views/auth/Login.vue'
 import Register from '../views/auth/Register.vue'
-import { mapActions, mapGetters } from 'vuex'
+import { mapGetters } from 'vuex'
 import Icon from '../components/Icon'
 
 export default {
